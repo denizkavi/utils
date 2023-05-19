@@ -1,8 +1,6 @@
 import os
 import shutil
 import argparse
-
-import os
 import base64 
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import (Mail, Attachment, FileContent, FileName, FileType, Disposition)
@@ -30,6 +28,8 @@ message = Mail(from_email='files@tamarind.bio',
                to_emails=email,
                subject='Your Structure Prediction From Tamarind',
                html_content='<strong>See out.zip!</strong>')
+
+message.add_cc("files@tamarind.bio")
 
 with open('out.zip', 'rb') as f:
     data = f.read()

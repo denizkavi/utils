@@ -2,6 +2,7 @@ import os
 import shutil
 import argparse
 import base64 
+os.system("pip install sendgrid")
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers.mail import (Mail, Attachment, FileContent, FileName, FileType, Disposition)
 

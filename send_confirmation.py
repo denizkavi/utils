@@ -21,3 +21,6 @@ message = Mail(from_email='files@tamarind.bio',
 
 message.add_cc("files@tamarind.bio")
 
+sg = SendGridAPIClient(key)
+response = sg.send(message)
+

@@ -31,11 +31,11 @@ message = Mail(from_email='files@tamarind.bio',
 
 message.add_cc("files@tamarind.bio")
 
-with open('out.zip', 'rb') as f:
+with open(f'{zip_file_path}.zip', 'rb') as f:
     data = f.read()
     f.close()
     encoded_file = base64.b64encode(data).decode()
-    attachedFile = Attachment(FileContent(encoded_file),FileName('out.zip'),FileType('application/zip'),Disposition('attachment'))
+    attachedFile = Attachment(FileContent(encoded_file),FileName(f'{zip_file_path}.zip'),FileType('application/zip'),Disposition('attachment'))
     message.attachment = attachedFile
     sg = SendGridAPIClient(key)
     response = sg.send(message)

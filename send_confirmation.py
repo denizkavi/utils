@@ -23,4 +23,3 @@ message.add_cc("files@tamarind.bio")
 
 sg = SendGridAPIClient(key)
 response = sg.send(message)
-

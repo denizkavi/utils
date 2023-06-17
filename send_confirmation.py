@@ -16,8 +16,8 @@ sequence = args.sequence
 ##send confirmation email
 message = Mail(from_email='files@tamarind.bio',
                to_emails=email,
-               subject="We've received your sequence.",
-               html_content='We will get back to you for the results of the structure prediction soon. Thank you for your using Tamarind! Your sequence is:' + sequence)
+               subject=f"We've received your sequence. ({sequence})",
+               html_content='We will get back to you for the results of the structure prediction soon. Thank you for your using Tamarind!')
 
 message.add_cc("files@tamarind.bio")
 

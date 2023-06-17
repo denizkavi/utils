@@ -11,12 +11,14 @@ parser.add_argument('directory_path')
 parser.add_argument('zip_file_path')
 parser.add_argument('api_key')
 parser.add_argument('email')
+parser.add_argument('jobname')
 
 args = parser.parse_args()
 directory_path = args.directory_path
 zip_file_path = args.zip_file_path
 key = args.api_key
 email = args.email
+jobname = args.jobname
 
 def create_zip(directory_path, zip_file_path):
     # Create the zip file from the out directory
@@ -27,8 +29,8 @@ create_zip(directory_path, zip_file_path)
 ##send email of out.zip
 message = Mail(from_email='files@tamarind.bio',
                to_emails=email,
-               subject='Your Structure Prediction From Tamarind',
-               html_content='<strong>See out.zip!</strong>')
+               subject=f'Your Structure Prediction From Tamarind ({jobname})', #{jobname},
+               html_content='See out.zip!') 
 
 message.add_cc("files@tamarind.bio")
 

@@ -34,4 +34,5 @@ lipoprotein = [res[key] for key in res]
 encoded = [encoded_res[key] for key in res]
 
 df = pd.DataFrame({"Id": id_, "Lipoprotein": lipoprotein, "Encoded":encoded})
-print(df.head())
+df.to_excel("signalp_results.xlsx")
+#add sending to user with email, also confirmation earlier that we recieved the query

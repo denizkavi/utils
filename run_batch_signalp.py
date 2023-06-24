@@ -57,7 +57,7 @@ def id2fasta(ID):
     text_file.write(content)
     text_file.close()
 
-[id2fasta(i) for i in uniprot_ids]
+[id2fasta(i) for i in uniprot_ids[:10]]
 
 commands = [f"/home/ubuntu/.local/bin/signalp6 --fastafile {i} --organism other --output_dir out/{i.split('.')[0]} --format txt --mode fast \n" for i in os.listdir("inputs")]
 

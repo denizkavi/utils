@@ -59,7 +59,7 @@ def id2fasta(ID):
 
 [id2fasta(i) for i in uniprot_ids[:10]]
 
-commands = [f"/home/ubuntu/.local/bin/signalp6 --fastafile {i} --organism other --output_dir out/{i.split('.')[0]} --format txt --mode fast \n" for i in os.listdir("inputs")]
+commands = [f"/home/ubuntu/.local/bin/signalp6 --fastafile inputs/{i} --organism other --output_dir out/{i.split('.')[0]} --format txt --mode fast \n" for i in os.listdir("inputs")]
 
 file1 = open("signalP_commands.sh", "w")
 file1.writelines(commands)
